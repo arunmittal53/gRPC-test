@@ -1,0 +1,20 @@
+syntax="proto3";
+
+package calculator;
+option go_package="calculator/calculatorpb";
+
+message SumRequest{
+    int32 num1=1;
+    int32 num2=2;
+}
+
+message SumResponse{
+    int32 result=1;
+}
+
+
+service CalculatoeService{
+    rpc Sum(SumRequest) returns(SumResponse){};
+    rpc SumServer(SumRequest) returns(stream SumResponse){};
+    rpc AverageClient(stream SumRequest) returns(SumResponse){};
+}
