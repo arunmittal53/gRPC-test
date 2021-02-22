@@ -7,6 +7,6 @@ compile proto files using
 
 
 
-set GOPATH using:
+set protoc compiler path using using:
 * export GO_PATH=~/go
 * export PATH=$PATH:/$GO_PATH/bin
